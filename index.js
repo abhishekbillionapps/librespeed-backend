@@ -13,11 +13,11 @@ app.post('/empty', (req, res) => {
 });
 
 app.post('/check-route', (req, res) => {
-  res.json({
+  return res.status(200).json({
     status: 'success',
-    message: 'Hellooooo There',
-
+    message: 'Hellooooo there',
   });
 });
+
 
 app.listen(3000, () => console.log('Upload server running on http://localhost:3000'));
