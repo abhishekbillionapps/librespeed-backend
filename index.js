@@ -8,8 +8,16 @@ app.use(express.raw({ type: '*/*', limit: '200mb' })); // Handle big uploads
 
 // Dummy upload handler
 app.post('/empty', (req, res) => {
-  req.on('data', () => {}); // Do nothing with the data
+  req.on('data', () => { }); // Do nothing with the data
   req.on('end', () => res.status(200).send('OK'));
+});
+
+app.post('/check-route', (req, res) => {
+  res.json({
+    status: 'success',
+    message: 'Hellooooo There',
+
+  });
 });
 
 app.listen(3000, () => console.log('Upload server running on http://localhost:3000'));
